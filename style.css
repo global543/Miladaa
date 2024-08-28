@@ -1,0 +1,243 @@
+/* General Styles */
+body {
+    font-family: 'Indie Flower', cursive !important;
+    background: linear-gradient(to right, #000000, #000000);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Hide elements */
+.hidden {
+    display: none;
+}
+
+/* Gift Container Styles */
+.gift-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.gift-container.hidden {
+    opacity: 0;
+    transform: translateX(100vw);
+}
+
+/* Click Here Text */
+.click-here-text {
+    font-family: 'Amatic SC', cursive;
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Gift Box */
+.gift-box {
+    max-width: 200px;
+    transition: transform 0.3s ease;
+}
+
+.gift-box:hover {
+    transform: scale(1.1);
+}
+
+/* Balloon Container */
+.balloon-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Balloon Styles */
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 50px;
+    height: 70px;
+    background-color: red;
+    border-radius: 50% 50% 45% 45%;
+    animation: rise 5s ease-in forwards;
+}
+
+.balloon::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: #999;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Button Styles */
+.geser-button {
+    font-family: 'Amatic SC', cursive;
+    font-size: 24px;
+    color: #000000;
+    background-color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.geser-button:hover {
+    background-color: #17a085;
+}
+
+/* Message Box */
+.message-box {
+    width: 150px;
+    height: 100px;
+    background-color: #1BBC98;
+    color: #FFFFFF;
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #FFFFFF;
+    margin: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.message-box p {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+/* Next Button */
+.next-button {
+    background-color: #ffffffea; /* Light Pink */
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.next-button:hover {
+    background-color: #6fecff; /* Deep Pink */
+}
+
+/* Book Styles */
+.book {
+    width: 90vw;
+    max-width: 350px;
+    height: auto;
+    perspective: 1500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: none;
+}
+
+.card {
+    width: 100%;
+    height: auto;
+    background: #e0e1dc;
+    color: #013243;
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: center; /* Ensure the card flips in place */
+    transition: transform 0.7s ease-in-out;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card:hover {
+    transform: rotateY(-180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    max-height: 90vh;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.front {
+    transform: rotateY(0deg);
+    background: #fafafa;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background: #e0e1dc;
+}
+
+.imgBox {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.imgBox img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.details {
+    text-align: center;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.text-right {
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* Keyframes for Balloon Animation */
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-120vh);
+    }
+}
